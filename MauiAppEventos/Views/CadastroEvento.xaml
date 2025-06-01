@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEventos.Views.CadastroEvento"
+             Title="CadastroEvento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#23507a">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                             Padding="10"
+                             Spacing="10">
+
+            <Label Text="Cadastro de Eventos"
+                   FontFamily="Kalam"
+                   FontSize="40"
+                   TextColor="#cac7bb" />
+
+            <Frame Padding="10">
+                <VerticalStackLayout Spacing="15">
+
+                    <Frame Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="Nome do Evento"
+                                   TextTransform="Uppercase"
+                                   FontSize="Subtitle"
+                                   TextColor="#cac7bb"/>
+                            <Entry x:Name="ent_nome"
+                                   Placeholder="Digite o nome do evento" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="Número de Participantes"
+                                   TextTransform="Uppercase"
+                                   FontSize="Subtitle"
+                                   TextColor="#cac7bb"/>
+
+                            <Grid RowDefinitions="Auto"
+                                  ColumnDefinitions="*, *, 2*">
+                                <Label Grid.Column="0"
+                                       Text="Participantes:" />
+                                <Label Grid.Column="1"
+                                       TextColor="#cac7bb"
+                                       Text="{Binding Value}"
+                                       BindingContext="{x:Reference stp_participantes}"/>
+                                <Stepper Grid.Column="2"
+                                         x:Name="stp_participantes"
+                                         Minimum="1"
+                                         Maximum="1000"
+                                         Increment="1"
+                                         Value="10" />
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="Local do Evento"
+                                   TextTransform="Uppercase"
+                                   FontSize="Subtitle"
+                                   TextColor="#cac7bb"/>
+                            <Picker x:Name="pck_local"
+                                    Title="Selecione o Local"
+                                   />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="Custo por Participante"
+                                   TextTransform="Uppercase"
+                                   FontSize="Subtitle"
+                                   TextColor="#cac7bb"/>
+                            <Entry x:Name="ent_custo"
+                                   Placeholder="Ex: 150,00"
+                                   Keyboard="Numeric" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Padding="10" Margin="5">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Período do Evento"
+                                   TextTransform="Uppercase"
+                                   FontSize="Subtitle"
+                                   TextColor="#cac7bb"/>
+
+                            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="Data de Início:" />
+                                <DatePicker x:Name="dtpck_inicio"
+                                            DateSelected="dtpck_inicio_DateSelected"
+                                            Format="dd/MM/yyyy" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="Data de Término:" />
+                                <DatePicker x:Name="dtpck_termino"
+                                            Format="dd/MM/yyyy" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Button Text="Cadastrar Evento" 
+                            Clicked="Button_Clicked"
+                            BackgroundColor="#23507a"
+                            TextColor="#cac7bb" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

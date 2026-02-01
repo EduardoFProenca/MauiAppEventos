@@ -17,7 +17,10 @@ Este projeto foi desenvolvido como **Agenda 15** da disciplina de **Desenvolvime
 
 ## 📸 Screenshots
 
-*(Adicione aqui capturas de tela do aplicativo quando disponíveis)*
+<p  align="center">
+  <img   width="180"  alt="1-Cadastro de Eventos" src="https://github.com/user-attachments/assets/9a7b774b-8698-476b-9741-c13050a3aeff" />
+  <img  width="180"  alt="2-Evento Cadastrado" src="https://github.com/user-attachments/assets/47db1c01-e5de-4184-9450-f4e3b567bd7b" />
+</p>
 
 ## ✨ Funcionalidades
 
